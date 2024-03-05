@@ -3,9 +3,9 @@
 one:
   user: one
   movie: one
-  score: 1
+  score: 2.5
 
 two:
   user: two
   movie: two
-  score: 1
+  score: 1.5

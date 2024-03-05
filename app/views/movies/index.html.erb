@@ -4,11 +4,15 @@
   <div>
     <h2><%= movie.title %></h2>
     <p>Director: <%= movie.director %></p>
-    <p>Average Score: <%= movie.average_score %></p>
+    <p>Average_score: <%= movie.average_score %></p>
+    <% if user_signed_in? %>
     <%= form_for(current_user.user_movies.find_or_initialize_by(movie_id: movie.id), remote: true) do |f| %>
       <%= f.hidden_field :movie_id, value: movie.id %>
-      <%= f.number_field :score, in: 1..10 %>
+      <%= f.number_field :average_score, in: 1..10 %>
       <%= f.submit "Rate" %>
     <% end %>
+  <% else %>
+    <p>You need to sign in to rate this movie.</p>
+  <% end %>
   </div>
 <% end %>

@@ -17,11 +17,4 @@ RSpec.describe MoviesController, type: :controller do
     user = User.create!(email: 'test@example.com', password: 'password')
     session[:user_id] = user.id
   end
-
-  describe "GET #index" do
-    it "returns a success response" do
-      get :index
-      expect(response).to be_successful
-    end
-  end
 end

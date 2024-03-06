@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   end
   resources :user_movies, only: [:create, :update]
 
-  post 'submit_ratings', to: 'ratings#submit'
+  post '/submit_ratings', to: 'ratings#submit'
   get '/users', to: 'users#index'
   post '/movies', to: 'movies#create'
   post '/users',   to: 'users#create'

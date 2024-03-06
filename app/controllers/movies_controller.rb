@@ -1,4 +1,5 @@
 class MoviesController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_action :authenticate_user!, only: [:create]
   require 'csv'
   require 'json'

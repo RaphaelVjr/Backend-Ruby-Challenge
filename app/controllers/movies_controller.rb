@@ -26,14 +26,13 @@ class MoviesController < ApplicationController
 
   def import
     if params[:file].content_type == 'application/json'
-      # Se o arquivo for um JSON
       movies = JSON.parse(params[:file].read)
 
       movies.each do |movie|
         Movie.create!(id: movie['id'], title: movie['title'], director: movie['director'], average_score: movie['average_score'], created_at: movie['created_at'], updated_at: movie['updated_at'])
       end
     elsif params[:file].content_type == 'text/csv'
-      # Se o arquivo for um CSV
+
       CSV.foreach(params[:file].path, headers: true) do |row|
         Movie.create!(id: row['id'], title: row['title'], director: row['director'], average_score: row['average_score'], created_at: row['created_at'], updated_at: row['updated_at'])
       end

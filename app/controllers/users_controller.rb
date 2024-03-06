@@ -17,6 +17,7 @@ class UsersController < ApplicationController
       render json: { error: 'User already exists' }, status: :conflict
     else
       if @user.save
+        EmailWorker.perform_async(@user.id)
         render json: @user, status: :created
       else
         render json: @user.errors, status: :unprocessable_entity

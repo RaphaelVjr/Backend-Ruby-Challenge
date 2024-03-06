@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get '/users', to: 'users#index'
   post '/movies', to: 'movies#create'
   post '/users',   to: 'users#create'
-  post 'import_films', to: 'movies#import'  
+  post 'import_movies', to: 'movies#import'  
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'

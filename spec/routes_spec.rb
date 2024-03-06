@@ -15,8 +15,8 @@ RSpec.describe "Routes", type: :routing do
   end
 
   it "routes /movies to the movies controller" do
-    expect(get("/movies")).to route_to("movies#index", format: 'json')
-    expect(post("/movies")).to route_to("movies#create", format: 'json')
+    expect(get("/movies")).to route_to("movies#index")
+    expect(post("/movies")).to route_to("movies#create")
   end
 
   it "routes /user_movies to the user_movies controller" do

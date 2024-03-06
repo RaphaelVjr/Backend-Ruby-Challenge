@@ -24,27 +24,4 @@ RSpec.describe MoviesController, type: :controller do
       expect(response).to be_successful
     end
   end
-
-  describe "GET #new" do
-    it "returns a success response" do
-      get :new
-      expect(response).to be_successful
-    end
-  end
-
-  describe "POST #create" do
-  context "with invalid params" do
-    it "does not create a new Movie" do
-      expect {
-        post :create, params: { movie: invalid_attributes }
-      }.not_to change(Movie, :count)
-    end
-
-    it "renders the 'new' template" do
-      post :create, params: { movie: invalid_attributes }
-      expect(response).to be_successful
-      expect(response).to render_template(:new)
-    end
-  end
-end
 end

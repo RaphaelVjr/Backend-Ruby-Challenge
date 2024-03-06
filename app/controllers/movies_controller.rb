@@ -1,5 +1,4 @@
 class MoviesController < ApplicationController
-  protect_from_forgery prepend: true
   before_action :authenticate_user!, only: [:create]
   require 'csv'
   require 'json'

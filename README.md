@@ -72,6 +72,37 @@ After clone the repository, and installed all items. In root where located the G
 ```bash
 bundle install
 ```
+```bash
+rails db:schema:load
+```
+```bash
+rails db:seed
+```
+```bash
+rails server
+```
+
+## Running Redis (Read the getting started and requirements)
+
+in WSL linux bash:
+
+```bash
+redis-server
+```
+Open a new wsl bash:
+```bash
+redis-cli
+```
+
+
+
+## Running Sidekiq (Read the getting started and requirements)
+
+You need redis server running.
+
+```bash
+bundle exec sidekiq
+```
 
 
 ## API Documentation

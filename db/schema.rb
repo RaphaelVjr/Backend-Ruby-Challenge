@@ -15,7 +15,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_06_010438) do
     t.string "title"
     t.string "director"
     t.string "created_at"
-    t.string "updated_at"
+    t.datetime "updated_at"
     t.float "average_score"
     t.index ["title"], name: "index_movies_on_title", unique: true
   end
@@ -25,7 +25,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_06_010438) do
     t.integer "movie_id", null: false
     t.float "average_score"
     t.string "created_at", null: false
-    t.string "updated_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["movie_id"], name: "index_user_movies_on_movie_id"
     t.index ["user_id"], name: "index_user_movies_on_user_id"
   end

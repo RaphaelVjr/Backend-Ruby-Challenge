@@ -1,5 +1,5 @@
 
-# Kendo MoviesJob Apply Ruby Backend Challenge
+# Kendo Movies Job Apply Ruby Backend Challenge
 
 A backend server that allow routes to create, get and destroy: movies, sessions and users. Have sidekiq and redis configured for aside jobs and workers. Allow user to import a csv file and receive that in the database.
 

@@ -16,7 +16,7 @@ A backend server that allow routes to create, get and destroy: movies, sessions 
 ## Clone repository
 
 
-```http
+```bash
 git clone https://github.com/RaphaelVjr/frontend.git
 ```
 
@@ -69,7 +69,7 @@ You need to install (Might you need to look for install guide based on your OS):
 
 After clone the repository, and installed all items. In root where located the GemFile run this to install all dependencies.
 
-```http
+```bash
 bundle install
 ```
 
@@ -78,7 +78,7 @@ bundle install
 
 All the routes and their methods.
 
-```http
+```bash
   post '/submit_ratings', to: 'ratings#submit'
   get '/users', to: 'users#index'
   post '/movies', to: 'movies#create'

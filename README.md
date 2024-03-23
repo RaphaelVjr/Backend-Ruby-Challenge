@@ -89,7 +89,10 @@ in WSL linux bash:
 ```bash
 redis-server
 ```
-Open a new wsl bash:
+Open a new wsl bash and test (if return ´PONG´, is running properly):
+```bash
+redis-cli ping 
+```
 ```bash
 redis-cli
 ```

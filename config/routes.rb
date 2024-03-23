@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   post '/submit_ratings', to: 'ratings#submit'
   get '/users', to: 'users#index'
+  get 'job_status/:job_id', to: 'jobs#status'
   post '/movies', to: 'movies#create'
   post '/users',   to: 'users#create'
   post 'import_movies', to: 'movies#import'  

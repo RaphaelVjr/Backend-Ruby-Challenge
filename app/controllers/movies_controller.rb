@@ -25,22 +25,16 @@ class MoviesController < ApplicationController
   end
 
   def import
-    if params[:file].content_type == 'application/json'
-      movies = JSON.parse(params[:file].read)
-
-      movies.each do |movie|
-        Movie.create!(id: movie['id'], title: movie['title'], director: movie['director'], average_score: movie['average_score'], created_at: movie['created_at'], updated_at: movie['updated_at'])
+    if ['application/json', 'text/csv'].include?(params[:file].content_type)
+      # Save the file to a temporary location
+      file_path = Rails.root.join('tmp', params[:file].original_filename)
+      File.open(file_path, 'wb') do |file|
+        file.write(params[:file].read)
       end
-    elsif params[:file].content_type == 'text/csv'
-
-      CSV.foreach(params[:file].path, headers: true) do |row|
-        Movie.create!(id: row['id'], title: row['title'], director: row['director'], average_score: row['average_score'], created_at: row['created_at'], updated_at: row['updated_at'])
-      end
-    else
-      return redirect_to root_url, alert: "Tipo de arquivo não suportado."
+  
+      # Start the Sidekiq job to import the movies
+      MovieImportWorker.perform_async(file_path.to_s, params[:file].content_type)
     end
-
-    redirect_to root_url, notice: "Filmes importados."
   end
 
   def create

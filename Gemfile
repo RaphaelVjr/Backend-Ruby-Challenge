@@ -6,6 +6,8 @@ gem "rspec"
 
 gem 'devise'
 
+gem 'sidekiq-status'
+
 gem 'rails-controller-testing'
 
 group :development, :test do

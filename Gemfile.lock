@@ -107,6 +107,8 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
+    chronic_duration (0.10.6)
+      numerizer (~> 0.1.1)
     concurrent-ruby (1.2.3)
     connection_pool (2.4.1)
     crass (1.0.6)
@@ -172,6 +174,7 @@ GEM
     nio4r (2.7.0)
     nokogiri (1.16.2-x64-mingw-ucrt)
       racc (~> 1.4)
+    numerizer (0.1.1)
     orm_adapter (0.5.0)
     psych (5.1.2)
       stringio
@@ -269,6 +272,9 @@ GEM
       connection_pool (>= 2.3.0)
       rack (>= 2.2.4)
       redis-client (>= 0.19.0)
+    sidekiq-status (3.0.3)
+      chronic_duration
+      sidekiq (>= 6.0, < 8)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -330,6 +336,7 @@ DEPENDENCIES
   rspec-rails (~> 5.0)
   selenium-webdriver
   sidekiq (~> 7.2)
+  sidekiq-status
   sinatra!
   sprockets-rails
   sqlite3 (~> 1.4)

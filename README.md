@@ -6,11 +6,11 @@ A backend server that allow routes to create, get and destroy: movies, sessions 
 
 ## Features
 
-- Login page
+- User Auth
 - Unit testing
 - Worker mailer sidekiq
 - Csv and payload.json import
-- Movie API
+- Database SQLite Schema
 
 
 ## Clone repository

@@ -20,7 +20,7 @@ A backend server that allow routes to create, get and destroy: movies, sessions 
 git clone https://github.com/RaphaelVjr/frontend.git
 ```
 
-## Install Guides (Required)
+## Install Guides (Required) 🛠️
 
 You need to install (Might you need to look for install guide based on your OS):
 
@@ -108,7 +108,7 @@ bundle exec sidekiq
 ```
 
 
-## API Documentation
+## API Documentation 📚
 
 All the routes and their methods.
 
